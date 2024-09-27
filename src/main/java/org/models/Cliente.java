@@ -12,6 +12,7 @@ public class Cliente implements ICliente {
     private String email;
     private Integer saldo;
     private ListaProduto produtosAdquiridos;
+    private ECommerce local;
 
 
     @Override

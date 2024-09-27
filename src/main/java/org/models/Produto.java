@@ -8,5 +8,4 @@ public class Produto {
     private String dataCadastro;
     private Integer quantidade;
     private Boolean comprado;
-
 }
