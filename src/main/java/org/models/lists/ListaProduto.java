@@ -1,5 +1,6 @@
 package org.models.lists;
 
+import org.models.Produto;
 import org.models.lists.elements.NoProduto;
 
 public class ListaProduto {
@@ -12,6 +13,33 @@ public class ListaProduto {
     public Boolean isEmpty() {
         return inicio == null;
     }
+
+    public Integer setProduto(Produto produto) {
+        if(isEmpty()) {
+            NoProduto noProduto = new NoProduto();
+            noProduto.setProduto(produto);
+            noProduto.setProximo(inicio);
+
+            inicio = noProduto;
+
+            return 200;
+        }
+
+        NoProduto noProduto = new NoProduto();
+        noProduto.setProduto(produto);
+        noProduto.setProximo(null);
+
+        NoProduto tmpNode = inicio;
+
+        while(tmpNode.getProximo() != null) {
+            tmpNode = tmpNode.getProximo();
+        }
+
+        tmpNode = noProduto;
+
+        return 200;
+    }
+
 
     public Integer getSize() {
         if(isEmpty()) return 0;
